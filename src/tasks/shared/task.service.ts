@@ -30,7 +30,7 @@ export class TaskService {
     if (this.tasks.length > 0) {
       lastID = this.tasks[this.tasks.length - 1].id;
     }
-    console.log(task);
+
     task.id = lastID + 1;
     this.tasks.push(task);
 

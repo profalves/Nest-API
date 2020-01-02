@@ -29,7 +29,7 @@ export class TasksController {
     return this.taskService.create(task);
   }
 
-  @Put()
+  @Put(':id')
   async update(@Param('id') id: number, @Body() task: Task): Promise<Task> {
     task.id = id;
     return this.taskService.update(task);
