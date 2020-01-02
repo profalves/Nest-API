@@ -25,9 +25,30 @@ export class TaskService {
     return task;
   }
 
-  create(task: Task) {}
+  create(task: Task) {
+    let lastID = 0;
+    if (this.tasks.length > 0) {
+      lastID = this.tasks[this.tasks.length - 1].id;
+    }
+    console.log(task);
+    task.id = lastID + 1;
+    this.tasks.push(task);
 
-  update(task: Task) {}
+    return task;
+  }
 
-  delete(id: number) {}
+  update(task: Task) {
+    const taskArray = this.getById(task.id);
+    if (taskArray) {
+      taskArray.description = task.description;
+      taskArray.completed = task.completed;
+    }
+
+    return taskArray;
+  }
+
+  delete(id: number) {
+    const index = this.tasks.findIndex(value => value.id == id);
+    this.tasks.splice(index, 1);
+  }
 }
