@@ -36,7 +36,16 @@ $ npm run test:cov
 
 ## See API documentation
 
+- API routes documentation
 [https://localhost:3000/api](https://localhost:3000/api)
+
+- General documentation 
+
+```bash
+npx compodoc -p tsconfig.json -s
+```
+
+[http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 ## Support
 
